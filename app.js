@@ -13,7 +13,7 @@ var scores,roundScores,activePlayer,playingGame,diceRoll;
 
 init();
 
-document.querySelector('.btn-roll').addEventListener('click', function() {
+document.querySelector('.btn-roll').addEventListener('click',() => {
 if(playingGame){
     //add random number(
     var dice1 = Math.floor(Math.random()*6)+1;
@@ -44,7 +44,7 @@ if(playingGame){
 
 });
 
-document.querySelector('.btn-hold').addEventListener('click', function(){
+document.querySelector('.btn-hold').addEventListener('click', () => {
 if(playingGame){
 //Add current score to global score
 scores[activePlayer] += roundScores;
@@ -52,7 +52,7 @@ scores[activePlayer] += roundScores;
 //Update the UI
 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-var input=document.querySelector('.update-score').value;
+var input=document.querySelector('.final-score').value;
 var winningScore;
 
 if(input){
@@ -94,7 +94,7 @@ function nextPlayer()
 
 document.querySelector('.btn-new').addEventListener('click' , init);
 
-function init()
+ function init()
 {
     scores = [0,0];
     roundScores = 0;
